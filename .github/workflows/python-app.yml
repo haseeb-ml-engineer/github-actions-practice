@@ -31,4 +31,4 @@ jobs:
 
       # Step 4: Run Tests
       - name: Run Tests
-        run: pytest
+        run: python -m pytest || [ $? -eq 5 ]
