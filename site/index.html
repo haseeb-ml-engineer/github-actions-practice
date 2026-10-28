@@ -1,0 +1,37 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Group1 Calculator</title>
+  <style>
+    body { font-family: Arial, sans-serif; max-width: 650px;
+           margin: 60px auto; padding: 20px; background: #f4f6f8; }
+    main { background: white; padding: 28px; border-radius: 12px; }
+    input, button { padding: 10px; margin: 5px 0; }
+    #result { font-weight: bold; margin-top: 18px; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Group1 Calculator</h1>
+    <p>A simple calculator demonstrating automated testing and deployment.</p>
+    <label>First number <input id="a" type="number" value="10"></label>
+    <br>
+    <label>Second number <input id="b" type="number" value="5"></label>
+    <br>
+    <button onclick="calculate('+')">Add</button>
+    <button onclick="calculate('-')">Subtract</button>
+    <p id="result">Result will appear here.</p>
+  </main>
+  <script>
+    function calculate(operation) {
+      const a = Number(document.getElementById('a').value);
+      const b = Number(document.getElementById('b').value);
+      const result = operation === '+' ? a + b : a - b;
+      document.getElementById('result').textContent = 'Result: ' + result;
+    }
+  </script>
+</body>
+</html>

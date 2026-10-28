@@ -1,0 +1,49 @@
+
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  validate-test-build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Check Python syntax
+        run: python -m compileall -q src tests
+
+      - name: Validate website
+        run: python -c "from pathlib import Path; p=Path('site/index.html'); assert p.is_file(), 'Website file missing'; assert '<html' in p.read_text().lower(), 'Invalid HTML document'"
+
+      - name: Run automated tests
+        run: python -m pytest -v
+
+      - name: Package website
+        run: |
+          mkdir -p dist
+          cp site/index.html dist/index.html
+
+      - name: Upload website package
+        uses: actions/upload-artifact@v4
+        with:
+          name: website-package
+          path: dist/
