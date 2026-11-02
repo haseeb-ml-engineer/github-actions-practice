@@ -16,13 +16,13 @@
 
 | | |
 |:--|:--|
-| **Student name** | `[STUDENT NAME]` |
-| **Registration number** | `[REGISTRATION NUMBER]` |
-| **Program** | `[DEGREE PROGRAM]` |
-| **Department** | `[DEPARTMENT NAME]` |
-| **University** | `[UNIVERSITY NAME]` |
+| **Student name** | `[Haseeb Tariq]`, `[Sharjeel Ikhlaq]`, `[Moaz Naeem]` |
+| **Registration number** | `[58957]`, `[58129]`, `[55286]` |
+| **Program** | `[BS-IT]` |
+| **Department** | `[Information Technology]` |
+| **University** | `[Riphah International University]` |
 | **Course** | DevOps |
-| **Instructor / Supervisor** | `[INSTRUCTOR / SUPERVISOR NAME]` |
+| **Instructor / Supervisor** | `[Dr. Asif Nauman]` |
 | **Submission date** | `[DD MONTH YYYY]` |
 
 ---
